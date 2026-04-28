@@ -45,9 +45,16 @@ El completo barrido de $\nu$ genera una circunferencia en el plano XY, mientras 
 
 Las siguientes figuras muestran un esquema de la representación de las coordenadas toroidales:  
 
-![](./ejes_1.png){fig-align="center"}
-![](./ejes_2.png){fig-align="center"}
-![](./ejes_3.png){fig-align="center"}
+::: {#fig-ejes layout-ncol=3}
+![Rotación sobre $\nu$](./ejes_1.png)
+
+![Rotación sobre $\phi$](./ejes_2.png)
+
+![Distintos valores de $\mu$](./ejes_3.png)
+
+Visualización de los tres ejes del sistema.
+:::
+
 
 En la figura 1 se puede observar la región $\Omega$ como el volumen comprendido entre los toroides definidos por $\mu=1$ (verde) y $\mu=2$ (rojo). La figura 2 muestra un corte transversal ($\phi \in [0, \pi)$) donde se puede apreciar claramente la cavidad interior del toroide más delgado ($\mu=2$) dentro del toroide más grueso ($\mu=1$).
 

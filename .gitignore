@@ -3,3 +3,4 @@ tp1_files/
 /.quarto/
 **/*.quarto_ipynb
 _site/
+*_pdf.qmd
