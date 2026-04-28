@@ -1,0 +1,4 @@
+---
+title: "Trabajos Prácticos"
+---
+Trabajos prácticos del curso de posgrado Matemática Aplicada.

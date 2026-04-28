@@ -1,0 +1,17 @@
+project:
+  type: website
+
+website:
+  title: "Matemática Aplicada"
+  navbar:
+    left:
+      - text: "Inicio"
+        file: index.qmd
+      - text: "TP 1"
+        file: modulo1/tp1.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
