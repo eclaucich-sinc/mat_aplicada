@@ -1,2 +1,5 @@
 *.pdf
 tp1_files/
+/.quarto/
+**/*.quarto_ipynb
+_site/
