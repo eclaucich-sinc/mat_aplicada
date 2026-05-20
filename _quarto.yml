@@ -9,6 +9,8 @@ website:
         file: index.qmd
       - text: "TP 1"
         file: modulo1/tp1.qmd
+      - text: "TP 2"
+        file: modulo2/tp2.qmd
 
 format:
   html:
