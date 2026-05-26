@@ -1,5 +1,5 @@
 ---
-title: "Trabajo Práctico: Análisis en Coordenadas Toroidales"
+title: "Trabajo Práctico: Métodos Numéricos"
 page-layout: full
 format:
   html:
