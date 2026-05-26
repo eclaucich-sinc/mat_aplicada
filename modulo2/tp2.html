@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Trabajo Práctico: Análisis en Coordenadas Toroidales – Matemática Aplicada</title>
+<title>Trabajo Práctico: Métodos Numéricos – Matemática Aplicada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -202,7 +202,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Trabajo Práctico: Análisis en Coordenadas Toroidales</h1>
+<h1 class="title">Trabajo Práctico: Métodos Numéricos</h1>
 </div>
 
 
@@ -258,7 +258,7 @@ Note
 <p><span class="math display">\[ \gamma_{n+1} = \gamma_n - \frac{f(\gamma_n)}{f'(\gamma_n)} \]</span></p>
 <p>La derivada de <span class="math inline">\(f(\gamma)\)</span> es:</p>
 <p><span class="math display">\[ f'(\gamma) = 3\cosh(3\gamma) - 4 \]</span></p>
-<div id="578e27b1" class="cell" data-execution_count="1">
+<div id="3cef3058" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -327,7 +327,7 @@ Valor final de gamma calculado: 0.45041667</code></pre>
 <p><span class="math display">\[ y_{min} = y(0) = \frac{1}{\gamma} \left( \cosh(0) - \cosh(\gamma a) \right) + h = \frac{1}{\gamma} (1 - \cosh(\gamma a)) + h \]</span></p>
 <p>Reemplazando por <span class="math inline">\(\gamma=0,45041667\)</span>:</p>
 <p><span class="math display">\[ y_{min} = \frac{1}{0,45041667} (1 - \cosh(0,45041667 \cdot 3)) + 2,5 \]</span></p>
-<div id="8e47075b" class="cell" data-execution_count="2">
+<div id="31db88d1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y_min <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> gamma_calculado) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.cosh(gamma_calculado <span class="op">*</span> a)) <span class="op">+</span> h</span>
@@ -337,7 +337,7 @@ Valor final de gamma calculado: 0.45041667</code></pre>
 <pre><code>Altura del punto más bajo: 0.1453 m</code></pre>
 </div>
 </div>
-<div id="5ec721d4" class="cell" data-execution_count="3">
+<div id="4ee470e4" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -403,7 +403,7 @@ Note
 <p>Esta es la misma exṕresión que teníamos inicialmente.</p>
 <p>Podemos realizar la integración numérica utilizando el Método de Simpson 1/3 para verificar que el resultado coincide con <span class="math inline">\(L=8m\)</span>.Para este método es necesario evaluar la función integrando en varios puntos dentro del intervalo de integración, y luego aplicar la fórmula de Simpson para obtener una aproximación de la integral:</p>
 <p><span class="math display">\[ L \approx \frac{h}{3} \left( f(x_0) + 4 \sum_{i=1,3,5,...}^{n-1} f(x_i) + 2 \sum_{i=2,4,6,...}^{n-2} f(x_i) + f(x_n) \right) \]</span></p>
-<div id="b0ad0c2c" class="cell" data-execution_count="4">
+<div id="15bd6aa5" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> integrando(x):</span>
@@ -474,7 +474,7 @@ Note
 <p><span class="math display">\[ \left( A^T A \right) c = A^T y \]</span></p>
 <p>El sistema resultante se puede resolver utilizando métodos de álgebra lineal para encontrar los coeficientes del polinomio <span class="math inline">\(P_4(x)\)</span> que mejor ajusta los puntos de la soga en el sentido de mínimos cuadrados. Luego, con el polinomio ajustado, se puede calcular la altura del punto más bajo de la soga evaluando <span class="math inline">\(P_4(0)\)</span> y comparándola con el valor real obtenido anteriormente para determinar el error cometido por el ajuste.</p>
 <p>En este caso se utiliza el método de <code>numpy.linalg.solve</code>.</p>
-<div id="020cecb8" class="cell" data-execution_count="5">
+<div id="941d5795" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> soga(x):</span>
@@ -575,7 +575,7 @@ Note
 <p><span class="math display">\[ 1 + 2h\gamma + h^2\gamma^2 - \frac{L^2}{4}\gamma^2 = 1 \]</span></p>
 <p><span class="math display">\[ 2h + \left(h^2 - \frac{L^2}{4}\right)\gamma = 0 \]</span></p>
 <p><span class="math display">\[ \gamma_{limite} = \frac{2h}{\frac{L^2}{4} - h^2} \]</span></p>
-<div id="b5730344" class="cell" data-execution_count="6">
+<div id="d98ffe68" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gamma_limite <span class="op">=</span> (<span class="dv">2</span> <span class="op">*</span> h) <span class="op">/</span> ((L<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> <span class="dv">4</span>) <span class="op">-</span> h<span class="op">**</span><span class="dv">2</span>)</span>
@@ -589,7 +589,7 @@ Note
 <p><span class="math display">\[ f(a) = \cosh(\gamma_{limite} a) - (1 + h\gamma_{limite}) = 0 \]</span></p>
 <p>Como debemos encontrar esta solución con un error mínimo a <span class="math inline">\(1mm\)</span>, y teniendo en cuenta nuevamnete la simétrico con respecto al <span class="math inline">\(x=0\)</span>, el margen de error para <span class="math inline">\(a\)</span> es de <span class="math inline">\(0,001/2 = 0,0005 m\)</span>.</p>
 <p>Podemos usar el método de la bisección para encontrar el valor de <span class="math inline">\(a\)</span> que satisface esta ecuación con la tolerancia requerida. Para esto, es necesario elegir un intervalo inicial que contenga la raíz (es esperable que esté en el intervalo <span class="math inline">\([1,0; 3,0]\)</span>), y luego iterar hasta que el error máximo del intervalo sea menor a <span class="math inline">\(0,0005 m\)</span>.</p>
-<div id="961e42e3" class="cell" data-execution_count="7">
+<div id="fefbb316" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_a(a):</span>
